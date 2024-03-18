@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <title>Control Panel</title>
+  <link rel="icon" href="data:,">
+
+  <link rel="stylesheet" href="../css/common.css">
+
+  <!-- Insert this few strings -->
+  <link rel="stylesheet" href="../css/_root.css">
+  <link rel="stylesheet" href="../css/allgrp.css">
+  <link rel="stylesheet" href="../css/pg1.css">
+  <script src="../lib/compmin.js" type="text/javascript" defer></script>
+  <!-- The end of unsertion block -->
+
+  <script src="../lib/LINQ.js" async></script>
+  <script src="../lib/GenericWebSocketClient.js" async></script>
+  <script src="../_DCU/init_buttons.js" async></script>
+  <script src="../_DCU/receiveEvents.js" async></script>
+  <script src="../lib/BrowserClient.js" defer></script>
+  <script src="../_DCU/table1.js" async></script>
+  <script src="../lib/onload.js" async></script>
+</head>
+
+<body>
+  <h2 class=h_2> Control panel for C#</h2>
+  <navi class='navi'>
+    <div class=navpressed>Main</div>
+    <div class=navbutton>Page1</div>
+    <div class=navbutton>Page2</div>
+    <div class=navbutton>Settings</div>
+  </navi>
+
+  <page id=pg0 class=mainpage>
+
+    <div class=container>
+      <div class=leftpanel>Left
+        <div id=lbut1 class=button_left onclick='handlers.L1_Click()'> L1</div>
+        <div id=lbut2 class=button_left onclick='handlers.L2_Click()'> L2</div>
+        <div id=lbut3 class=button_left onclick='handlers.L3_Click()'> L3</div>
+        <div id=lbut4 class=button_left onclick='handlers.L4_Click()' onselectstart="return false"> L4</div>
+      </div>
+
+      <div class=area>Area
+        <li>string console:</li>
+        <div id=area1></div>
+
+        <li>objects data:</li>
+        <div id=area2></div>
+
+        <li>visible console</li>
+        <div id=area3></div>
+      </div>
+
+
+      <div class=rightpanel>Right
+
+      </div>
+
+    </div>
+
+
+    <div class=control_buttons>
+      <div id=bbut1 class=button_bottom onclick='handlers.But1_Click()'> Button1</div>
+      <div id=bbut2 class=button_bottom onclick='handlers.But2_Click()'> Button2</div>
+      <div id=bbut3 class=button_bottom onclick='handlers.But3_Click()'> Button3</div>
+      <div id=bbut4 class=button_bottom onclick='handlers.But4_Click()' name='togglebutton'> Button4</div>
+    </div>
+
+  </page>
+
+
+  <page id=pg1 style='display:none;'>
+    <h1 id=pg1h1 style='text-Align:center; font-size: 20px;color: rgb(180,180,100);'> Table of received parameters
+    </h1>
+
+    <div id=table1 class=pg1_form> </div>
+    <div style='width:100%; height:20px;'></div>
+
+    <div class=flex2>
+      <div style='position:relative;'>
+        <div class=control_buttons style='margin-left:20vw; margin-right:30px;'>
+          <div id=bbut1 class=button_bottom2 onclick='handlers.But1_Click()'> Button1</div>
+          <div id=bbut2 class=button_bottom2 onclick='handlers.But2_Click()'> Button2</div>
+          <div id=bbut3 class=button_bottom2 onclick='handlers.But3_Click()'> Button3</div>
+          <div id=bbut4 class=button_bottom2 onclick='handlers.But4_Click()' name='togglebutton'> Button4</div>
+        </div>
+      </div>
+    </div>
+  </page>
+
+  <page id=pg2 style='display:none;'> Page 2 </page>
+
+  <page id=pg3 style='display:none;'>
+    <h1 style='text-Align:center; font-size: 20px;color: rgb(180,180,100);'> Custom settings
+      </h4>
+
+      <div class=oneline>
+        <div class=labelinput> IPAddress :</div>
+        <input type="text" class=darkinput value="localhost">
+      </div>
+
+      <div class=oneline>
+        <div class=labelinput> Port :</div>
+        <input type="text" class=darkinput value="8080">
+      </div>
+
+      <div class=oneline>
+        <div class=labelinput> wsClient_name :</div>
+        <input type="text" class=darkinput value="DCU browser">
+      </div>
+
+      <div style='height:40px; width:10px;' accessKey="some_space"></div>
+
+      <div class=oneline>
+        <label for="pet-select">Choose a theme:</label>
+
+        <select name="select1" id="theme-select" onchange="themeOnChange()">
+          <option value="cat">Ukraine</option>
+          <option value="dog">Dark</option>
+          <option value="dog">Light</option>
+        </select>
+      </div>
+  </page>
+
+</body>
+
+</html>
