@@ -3,6 +3,7 @@ var handlers = {
   L2_Click: () => { },
   L3_Click: () => { },
   L4_Click: () => { },
+  L5_Click: () => { },
   //
   But1_Click: () => { },
   But2_Click: () => { },
@@ -110,6 +111,27 @@ handlers.L4_Click = () => {
   // browser.client.wsSendTXT(max);
   // browser.client.wsSendTXT(str_10000);
 }
+
+
+handlers.L5_Click = () => {
+  if (ttt_str != null)
+
+    browser.client.wsSendObject(
+      {
+        // action: 'greeting',
+        action: 'transport',
+
+        message: ttt_str
+      });
+
+
+  // this.wsocket.send(JSON.stringify({ action: 'ECHO', data: value.toString() }));
+
+}
+
+
+
+
 
 
 

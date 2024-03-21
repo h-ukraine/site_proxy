@@ -54,6 +54,26 @@ function DcuOnObject(obj) {
   let keys = Object.keys(obj);
   let values = Object.values(obj);
 
+  let ybj;
+
+  if (obj.hasOwnProperty('action')) {
+    if (obj.action == 'transport') {
+      let str = obj.message;
+
+      yobj = JSON.parse(str);
+
+      // yobj = [];
+    }
+    set_select2(yobj['MeterNames']);
+  }
+
+  else if (obj.hasOwnProperty('MeterNames')) {
+    yobj = JSON.parse(obj.MeterNames);
+
+    yobj = [];
+  }
+
+
 
   let prp = obj.hasOwnProperty('ContName');
 
