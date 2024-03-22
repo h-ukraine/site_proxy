@@ -25,24 +25,24 @@ function DcuOnString(message) {
 
 
 
-function DcuOnObject_old(obj) {
+// function DcuOnObject_old(obj) {
 
-  //  obj - is response object from c#
-  let keys = Object.keys(obj);
-  let values = Object.values(obj);
+//   //  obj - is response object from c#
+//   let keys = Object.keys(obj);
+//   let values = Object.values(obj);
 
 
-  // Do some usefull job  .....
-  //...
-  let array = [];
+//   // Do some usefull job  .....
+//   //...
+//   let array = [];
 
-  keys.forEach(key => {
-    array.push(obj[key]);
+//   keys.forEach(key => {
+//     array.push(obj[key]);
 
-  });
-  //....
+//   });
+//   //....
 
-}
+// }
 
 
 
@@ -58,19 +58,20 @@ function DcuOnObject(obj) {
 
   if (obj.hasOwnProperty('action')) {
     if (obj.action == 'transport') {
-      let str = obj.message;
+      // let str = obj.message;
 
       yobj = obj.message; //  JSON.parse(str);
 
       // yobj = [];
     }
-    set_select2(yobj['MeterNames']);
+    set_select2(yobj.MeterNames);
   }
 
   else if (obj.hasOwnProperty('MeterNames')) {
-    yobj = obj.MeterNames; //    JSON.parse(obj.MeterNames);
+    // yobj = obj.MeterNames; //    JSON.parse(obj.MeterNames);
 
-    yobj = [];
+    set_select2(yobj['MeterNames']);
+    // yobj = [];
   }
 
 
