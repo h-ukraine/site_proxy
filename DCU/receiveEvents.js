@@ -68,7 +68,7 @@ function DcuOnObject(obj) {
   }
 
   else if (obj.hasOwnProperty('MeterNames')) {
-    yobj = JSON.parse(obj.MeterNames);
+    yobj = obj.MeterNames; //    JSON.parse(obj.MeterNames);
 
     yobj = [];
   }
