@@ -60,7 +60,7 @@ function DcuOnObject(obj) {
     if (obj.action == 'transport') {
       let str = obj.message;
 
-      yobj = JSON.parse(str);
+      yobj = obj.message; //  JSON.parse(str);
 
       // yobj = [];
     }
